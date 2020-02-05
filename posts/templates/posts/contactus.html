@@ -1,0 +1,28 @@
+{% extends 'posts/layout.html' %}
+{% load static %}
+{% block body %}
+<div id="main">
+   	<h2> View Book Record </h2>
+   	<table>
+   		<thead>
+   			<th>Name</th>
+   			<th>Email </th>
+   			<th>Mobile</th>
+   			<th>issue</th>
+   			<th>Edit Book</th>
+   			<th>Delete Book</th>
+   		</thead>
+   		{% for contact in contacts %}
+   		<tr>
+   			<td>{{contact.name}}</td>
+   			<td>{{contact.email}}</td>
+   			<td>{{contact.mobile}}</td>
+   			<td>{{contact.issue}}</td>
+
+   			<td><a class="btn" href="/posts/contact?contactid={{contact.id}}&method=edit">Edit Book</a></td>
+   			<td><a class="btn" href="/posts/contact?contactid={{contact.id}}&method=delete">Delete Book</a></td>
+   		</tr>
+   		{% endfor %}
+   	</table>
+   	
+   </div>{% endblock %}
